@@ -10,21 +10,23 @@ const VaccinationCoverage = props => {
     }
     return number.toString()
   }
-  const {VaccinationCoverageDetails} = props
+  const {vaccinationCoverageDetails} = props
 
   return (
     <div className="Vaccination-by-coverage-container">
-      <h1 className="Vaccination-by-coverage-headingone">Vaccination Coverage</h1>
+      <h1 className="Vaccination-by-coverage-headingone">
+        Vaccination Coverage
+      </h1>
       <BarChart
         width={900}
         height={400}
-        data={VaccinationCoverageDetails}
+        data={vaccinationCoverageDetails}
         margin={{
           top: 5,
         }}
       >
         <XAxis
-          dataKey="VaccinationDate"
+          dataKey="VaccineDate"
           tick={{
             stroke: '#6c757d',
             strokeWidth: 1,
@@ -54,14 +56,14 @@ const VaccinationCoverage = props => {
           name="Dose 1"
           fill="#5a8dee"
           radius={[10, 10, 0, 0]}
-          barSize="20%"
+          barSize={30}
         />
         <Bar
           dataKey="dose2"
           name="Dose 2"
           fill="#f54394"
           radius={[5, 5, 0, 0]}
-          barSize="20%"
+          barSize={30}
         />
       </BarChart>
     </div>
